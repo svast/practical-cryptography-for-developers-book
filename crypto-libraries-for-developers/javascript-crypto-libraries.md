@@ -1,21 +1,23 @@
 # JavaScript Crypto Libraries
 
+## JavaScript Crypto Libraries
+
 ...
 
-# Cryptography in JavaScript
+## Cryptography in JavaScript
 
 * ECDSA with elliptic.js and js-sha3
 
-## ECDSA in JavaScript: Generate / Load Keys
+### ECDSA in JavaScript: Generate / Load Keys
 
-```js
+```javascript
 npm install elliptic
 npm install js-sha3
 ```
 
 ...
 
-```js
+```javascript
 let elliptic = require('elliptic');
 let sha3 = require('js-sha3');
 let ec = new elliptic.ec('secp256k1');
@@ -31,9 +33,11 @@ console.log("Public key (compressed):",
     pubKey.encodeCompressed("hex"));
 ```
 
-## ECDSA in JavaScript: Sign Message
+Run the above code example: [https://repl.it/@nakov/ECDSA-in-JS](https://repl.it/@nakov/ECDSA-in-JS).
 
-```js
+ECDSA in JavaScript: Sign Message
+
+```javascript
 let msg = 'Message for signing';
 let msgHash = sha3.keccak256(msg);
 let signature = 
@@ -44,11 +48,13 @@ console.log(`Msg hash: ${msgHash}`);
 console.log("Signature:", signature);
 ```
 
-Complete example:[https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc](https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc)
+Run the above code example: [https://repl.it/@nakov/ECDSA-sign-verify-in-JS](https://repl.it/@nakov/ECDSA-sign-verify-in-JS).
 
-## ECDSA in JavaScript: Verify Signature
+Complete example: [https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc](https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc).
 
-```js
+### ECDSA in JavaScript: Verify Signature
+
+```javascript
 let hexToDecimal = (x) => ec.keyFromPrivate(x, "hex")
   .getPrivate().toString(10);
 let pubKeyRecovered = ec.recoverPubKey(
@@ -61,5 +67,7 @@ let validSig = ec.verify(
 console.log("Signature valid?", validSig);
 ```
 
-Complete example:[https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc](https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc)
+Run the above code example: [https://repl.it/@nakov/ECDSA-sign-verify-in-JS](https://repl.it/@nakov/ECDSA-sign-verify-in-JS).
+
+Complete example: [https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc](https://gist.github.com/nakov/1dcbe26988e18f7a4d013b65d8803ffc)
 

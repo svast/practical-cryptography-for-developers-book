@@ -1,12 +1,16 @@
-# Quantum Computers and Quantum-Safe Cryptography
+# Quantum-Safe Cryptography
 
 **Quantum computers** are ...
 
-TODO
+* TODO
+* TODO
 
-TODO
+See this page: [https://ianix.com/pqcrypto/pqcrypto-deployment.html](https://ianix.com/pqcrypto/pqcrypto-deployment.html)
 
-TODO
+* TODO
+
+**Quantum computing** is a model of computing based on the quantum physics, which works differently than classical computers and can do things that classical computers can’t, such  
+as breaking RSA and ECC efficiently. **Quantum computers** are not "faster computers" and they are not all-powerful and cannot do any computing job faster. Quantum computers are very efficient for certain problems and quite weak for others.
 
 It is well known in computer science that **quantum computers will break some cryptographic algorithms**, especially the public-key cryptosystems like **RSA**, **ECC** and **ECDSA** that rely on the **IFP** \(integer factorization problem\), the **DLP** \(discrete logarithms problem\) and the **ECDLP** \(elliptic-curve discrete logarithm problem\). Quantum algorithms will not be the end of cryptography, because:
 
@@ -50,7 +54,7 @@ A **k**-bit number can be factored in time of order **O\(k^3\)** using a quantum
 
 * ~ 1.2 billion operations == ~ less than 1 second using good machine
 
-ECDSA, DSA, RSA, ElGamal cryptosystems are all quantum-broken
+ECDSA, DSA, RSA, ElGamal, DHKE, ECDH cryptosystems are all quantum-broken
 
 Conclusion: publishing the signed transactions \(like Ethereum does\) is not quantum safe -&gt; avoid revealing the ECC public key
 
@@ -59,7 +63,7 @@ Conclusion: publishing the signed transactions \(like Ethereum does\) is not qua
 Cryptographic **hashes** \(like SHA2, SHA3, BLAKE2\) are considered **quantum-safe**:
 
 * On traditional computer, finding a collision for 256-bit hash takes √2^256 steps \(using the [**birthday attack**](https://en.wikipedia.org/wiki/Birthday_attack)\) -&gt; SHA256 has 2^128 crypto-strength
-* Quantum computers might find hash collisions in ∛2^256 operations \(see [the BHT algorithm](https://arxiv.org/pdf/quant-ph/9705002.pdf)\), but this is disputed \(see \[Bernstein 2009\] - http://cr.yp.to/hash/collisioncost-20090823.pdf
+* Quantum computers might find hash collisions in ∛2^256 operations \(see [the BHT algorithm](https://arxiv.org/pdf/quant-ph/9705002.pdf)\), but this is disputed \(see \[Bernstein 2009\] - [http://cr.yp.to/hash/collisioncost-20090823.pdf](http://cr.yp.to/hash/collisioncost-20090823.pdf)
 * On theory it might take 2^85 quantum operations to find SHA256 / SHA3-256 collision, but in practice it may cost significantly more. 
 
 Conclusion: SHA256 / SHA3-256 are most probably quantum-safe
@@ -74,8 +78,7 @@ Conclusion: SHA256 / SHA3-256 are most probably quantum-safe
 
 Most symmetric ciphers \(like AES and ChaCha20\) are quantum-safe:
 
-* [Grover's algorithm](https://en.wikipedia.org/wiki/Grover's_algorithm) finds AES secret key using √𝑁 quantum operations
-
+* \[Grover's algorithm\]\(\[\[\[\[\[[https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\]\(https://en.wikipedia.org/wiki/Grover's\_algorithm\)\)\)\)\)\](https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29]%28https://en.wikipedia.org/wiki/Grover's_algorithm]%28https://en.wikipedia.org/wiki/Grover's_algorithm%29%29%29%29%29\)\) finds AES secret key using √𝑁 quantum operations
 * Quantum era will **double the key size** of the symmetric ciphers, see [http://cr.yp.to/codes/grovercode-20100303.pdf](http://cr.yp.to/codes/grovercode-20100303.pdf%29%29\)
 
 AES-256 in the post-quantum era is like AES-128 before
@@ -135,9 +138,13 @@ QC-MDPC and libPQC are quantum-broken: [https://eprint.iacr.org/2016/858.pdf](ht
 
 **XMSS**
 
-Python implementation: [https://github.com/theQRL/QRL/blob/master/src/qrl/crypto/xmss.py](https://github.com/theQRL/QRL/blob/master/src/qrl/crypto/xmss.py)
+* Python implementation: [https://github.com/theQRL/QRL/blob/master/src/qrl/crypto/xmss.py](https://github.com/theQRL/QRL/blob/master/src/qrl/crypto/xmss.py)
 
-## Zero-Knowledge Proof-Based
+**NTRU**: NTRUEncrypt and NTRUSign
+
+* [https://en.wikipedia.org/wiki/NTRUEncrypt](https://en.wikipedia.org/wiki/NTRUEncrypt)
+
+### Zero-Knowledge Proof-Based
 
 PICNIC - [https://github.com/Microsoft/Picnic](https://github.com/Microsoft/Picnic)
 

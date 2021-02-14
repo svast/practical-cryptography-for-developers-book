@@ -1,21 +1,21 @@
-# Cryptographic Hash Functions and Collisions
+# Crypto Hashes and Collisions
 
-**Different input **messages are expected to produce **different output **hash values \(message digest\).
+**Different input** messages are expected to produce **different output** hash values \(message digest\).
 
-![](/assets/crypto-hash-function-examples.jpg)
+![](../.gitbook/assets/crypto-hash-function-examples.jpg)
 
 ## Hash Collisions
 
-**Collision** means the same hash value for two different inputs. For simple hash functions are easy to reach a collision. For example, assume a hash function `h(text)` sums of all character codes in a text. It will produce the same hash value \(collision\) for texts holding the same letters in different order, i.e. `h('abc') == h('cab') == h('bca')`. To avoid collisions, cryptographers have designed **collision-resistant** hash functions.
+A **collision** means the same hash value for two different inputs. For simple hash functions it is easy to reach a collision. For example, assume a hash function `h(text)` sums of all character codes in a text. It will produce the same hash value \(collision\) for texts holding the same letters in different order, i.e. `h('abc') == h('cab') == h('bca')`. To avoid collisions, cryptographers have designed **collision-resistant** hash functions.
 
 ## Cryptographic Hash Functions: No Collisions
 
-**Collisions **in the cryptographic hash functions are **extremely unlikely **to happen, so crypto **hashes **are considered to almost uniquely identify their corresponding input. Moreover, it is extremely hard to find an input message that hashes to given value.
+**Collisions** in the cryptographic hash functions are **extremely unlikely** to be found, so crypto **hashes** are considered to almost uniquely identify their corresponding input. Moreover, it is extremely hard to find an input message that hashes to given value.
 
-Cryptographic hash functions are **one-way hash functions**, which are **infeasible to invert**. The chance to find a collision for a strong cryptographic hash function \(like SHA-256\) is extremely little. Let's define this in more details:
+Cryptographic hash functions are **one-way hash functions**, which are **infeasible to invert**. The chance to find a collision \(by brute force\) for a strong cryptographic hash function \(like SHA-256\) is extremely little. Let's define this in more details:
 
 * Let's have hash value `h`=`hash(p)` for certain strong cryptographic hash function `hash`.
-* It is expected to be **extremely hard **to find an input `p'`, such that `hash(p')`=`h`.
+* It is expected to be **extremely hard** to find an input `p'`, such that `hash(p')`=`h`.
 * For most modern strong cryptographic hash functions there are **no known collisions**.
 
 The **ideal cryptographic hash function** should have the following properties:
